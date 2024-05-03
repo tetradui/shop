@@ -32,21 +32,46 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+# INSTALLED_APPS = [
+#     'django.contrib.admin',
+#     'django.contrib.auth',
+#     'django.contrib.contenttypes',
+#     'django.contrib.sessions',
+#     'django.contrib.messages',
+#     'django.contrib.staticfiles',
+#     #apps
+#     'account',
+#     'products',
+#     'order',
+
+#     #libs
+#     'rest_framework',
+#     'rest_framework_simplejwt',
+# ]
+
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #apps
-    'account',
-    'products',
+]
 
-    #libs
+ADDITIONAL_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
+    'drf_yasg',
 ]
+
+OWN_APPS = [
+    'account',
+    'products',
+    'order',
+]
+
+INSTALLED_APPS = DJANGO_APPS + ADDITIONAL_APPS + OWN_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,7 +157,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = 'product_img/'
-MEDIA_ROOT = BASE_DIR / 'product_img'
+MEDIA_ROOT = BASE_DIR / 'product_img/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
